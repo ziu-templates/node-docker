@@ -26,11 +26,11 @@ module.exports = function ({promptsData = {}, handlebars = {}, metalsmith = {}, 
     });
     
     metalsmith.use((files, metalsmith, next) => {
-        renderFn(files, promptsData, render, next, match);
+        renderFn(files, promptsData, render, match, next);
     });
 }
 
-function renderFn (files, promptsData, render, next, match) {
+function renderFn (files, promptsData, render, match, next) {
     let filePaths = Object.keys(files),
         pipeObj = pipe();
     filePaths.forEach((filePath) => {
