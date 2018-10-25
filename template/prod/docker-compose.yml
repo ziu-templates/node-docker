@@ -1,6 +1,6 @@
 version: "3"
 services:
-    {{ projectName }}:
+    \{\{ projectName \}\}:
         image: {{ image }}
         expose:
             - 80
