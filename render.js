@@ -39,6 +39,15 @@ function renderFn (files, promptsData, render, next) {
             if (!/{{([^{}]+)}}/g.test(content)) {
                 return this.next();
             }
+            let filterResult = Object.keys(pkgData.filters).some((filter) => {
+                if (match(filePath, filter, {dot: true })) {
+                    return true;
+                }
+                return false;
+            });
+            if (filterResult) {
+                return this.next();
+            }
             render(content, promptsData, (err, res) => {
                 if (err) {
                     err.message = `[${filePath}] ${err.message}`
