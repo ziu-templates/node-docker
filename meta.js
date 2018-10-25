@@ -20,5 +20,11 @@ module.exports = {
             type: 'string',
             message: 'Author',
         }
+    },
+    filters: {
+        'test/**/*': false,
+        'prod/**/*': false,
+        'pm2/**/*': false,
+        'Dockerfile': false,
     }
 };
