@@ -39,7 +39,7 @@ function renderFn (files, promptsData, render, match, next) {
             if (!/{{([^{}]+)}}/g.test(content)) {
                 return this.next();
             }
-            let filterResult = Object.keys(pkgData.filters).some((filter) => {
+            let filterResult = Object.keys(pkgData.renders).some((filter) => {
                 if (match(filePath, filter, {dot: true })) {
                     return true;
                 }

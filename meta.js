@@ -21,7 +21,7 @@ module.exports = {
             message: 'Author',
         }
     },
-    filters: {
+    renders: {
         'test/**/*': false,
         'prod/**/*': false,
         'pm2/**/*': false,
