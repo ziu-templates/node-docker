@@ -1,0 +1,15 @@
+version: "3"
+services:
+    {{ projectName }}:
+        image: {{ image }}
+        expose:
+            - 80
+        environment:
+            TZ: 'Asia/Shanghai'
+        tty: true
+        restart: always
+        command: ['npm', 'run', 'online']
+        networks:
+            - bzz
+networks:
+    bzz:
