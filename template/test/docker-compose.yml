@@ -10,6 +10,6 @@ services:
         restart: always
         command: ['npm', 'run', 'online-test']
         networks:
-            - bzz
+            - default
 networks:
-    bzz:
+    default:
